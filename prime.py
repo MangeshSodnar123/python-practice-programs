@@ -1,5 +1,5 @@
-start = int(input("enter the starting number"))
-end = int(input("enter the last number"))
+start = int(input("enter the starting number: "))
+end = int(input("enter the last number: "))
 
 for i in range(start, end+1):
     if i > 1:

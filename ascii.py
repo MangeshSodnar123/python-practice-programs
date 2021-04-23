@@ -1,5 +1,5 @@
 # syxtax for printing the ascii value
-num1 = input("enter one number or alphabet")
+num1 = input("enter one number or alphabet: ")
 print(ord(num1))
 
 # syntax for the value from ascii value 
