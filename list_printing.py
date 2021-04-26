@@ -15,4 +15,4 @@ list1 =[1, 2, 3,4 ,5,6,8,9]
 # print(*list1)
 # print(list1)
 # print(*list1, sep="\n")
-print(*list1, end="$")
+# print(*list1, end="") # prints in a single line.
