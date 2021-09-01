@@ -8,4 +8,4 @@ def fibonacci(num1):
     else:
         return fibonacci(num1-1)+fibonacci(num1-2)
 
-print(fibonacci(10))
+print(fibonacci(3))
