@@ -17,55 +17,55 @@ def button_click(number):
 def button_add():
     firstNum = e.get()
     global fNum
+    global actionFlag
+    actionFlag = "addition"
     fNum = int(firstNum)
     e.delete(0, END)
-    global actionFlag
-    actionFlag = 1
 
 def button_sub():
     firstNum = e.get()
     global fNum
+    global actionFlag
+    actionFlag = "substraction"
     fNum = int(firstNum)
     e.delete(0, END)
-    global actionFlag
-    actionFlag = 2
 
 def button_mult():
     firstNum = e.get()
     global fNum
+    global actionFlag
+    actionFlag = "multiplication"
     fNum = int(firstNum)
     e.delete(0, END)
-    global actionFlag
-    actionFlag = 3
 
 def button_div():
     firstNum = e.get()
     global fNum
+    global actionFlag
+    actionFlag = "division"
     fNum = int(firstNum)
     e.delete(0, END)
-    global actionFlag
-    actionFlag = 4
 
 def button_power():
     firstNum = e.get()
     global fNum
+    global actionFlag
+    actionFlag = "power"
     fNum = int(firstNum)
     e.delete(0, END)
-    global actionFlag
-    actionFlag = 5
 
 def button_equal():
     secondNum = e.get()
     e.delete(0, END)
-    if actionFlag == 1:
+    if actionFlag == "addition":
         e.insert(0, fNum + int(secondNum))
-    elif actionFlag == 2:
+    if actionFlag == "substraction":
         e.insert(0, fNum - int(secondNum))
-    elif actionFlag == 3:
+    if actionFlag == "multiplication":
         e.insert(0, fNum * int(secondNum))
-    elif actionFlag == 4:
+    if actionFlag == "division":
         e.insert(0, fNum / int(secondNum))
-    elif actionFlag == 5:
+    if actionFlag == "power":
         e.insert(0, fNum ** int(secondNum))
 
 def button_clear():
