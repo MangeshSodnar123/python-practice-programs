@@ -513,26 +513,173 @@
 
 
 #cities and information about it
-cities = {
-    'mumbai':{
-        'country':'india',
-        'population':'2,00,00,000',
-        'fact':'it is city full of diversity.'
-    },
-    'karachi':{
-        'country':'pakistan',
-        'population':'3,00,00,000',
-        'fact':'it is city full of terrorists.'
-    },
-    'london':{
-        'country':'united kingdom',
-        'population':'5,00,00,000',
-        'fact':'it is famous for big ben.'
-    }
-}
-#looping through first dictionary
-for city, facts in cities.items():
-    print(f"\n{city.title()} : ")
-    #looping through dictionaries inside
-    for key, value in facts.items():
-        print(f"\t{key.title()} : {facts[key].capitalize()}")
+# cities = {
+#     'mumbai':{
+#         'country':'india',
+#         'population':'2,00,00,000',
+#         'fact':'it is city full of diversity.'
+#     },
+#     'karachi':{
+#         'country':'pakistan',
+#         'population':'3,00,00,000',
+#         'fact':'it is city full of terrorists.'
+#     },
+#     'london':{
+#         'country':'united kingdom',
+#         'population':'5,00,00,000',
+#         'fact':'it is famous for big ben.'
+#     }
+# }
+# #looping through first dictionary
+# for city, facts in cities.items():
+#     print(f"\n{city.title()} : ")
+#     #looping through dictionaries inside
+#     for key, value in facts.items():
+#         print(f"\t{key.title()} : {facts[key].capitalize()}")
+
+
+#flags
+#flags
+#flags
+# message = '\nenter your message, i will show it back to you: '
+# message += '\ntype "quit" to stop program. '
+# active = True
+# while active:
+#     user_input = input(message)
+#     print(user_input)
+#     if 'quit' in user_input:
+#         active = False
+
+# prompt = "\nEnter the toppings you want on your pizza: "
+# active = True
+# while active:
+#     topping = input(prompt)
+#     if 'quit' in topping:
+#         # active = False
+#         break
+#     else:
+#         print(f"Your selected topping is {topping}.")
+
+
+# copying items from one list to another by using while loop 
+
+# unconfirmed_users = ['mangesh','jane','mandar','rajiv']
+# confirmed_users = []
+# #loop through unconfirmed_users
+# while unconfirmed_users:
+#     test_user = unconfirmed_users.pop()
+#     print(f"checking registration of {test_user}.")
+#     confirmed_users.append(test_user.title())
+# #loop through confirmed_users
+# for confirmed_user in confirmed_users:
+#     print(f"welcome {confirmed_user}.")
+
+
+# #removing particular value from list using while loop
+# pets = ['cat','dog','cat','cow','bull']
+# print(pets)
+# #loop through pets to remove cats
+# while 'cat' in pets:
+#     pets.remove('cat')
+# print(pets)
+
+
+# #polling through while loop
+# responses = {}
+# poll_active = True
+# while poll_active:
+#     #taking user input for poll
+#     name = input("Enter your name: ")
+#     fav_politician = input("Enter your favourite politician: ")
+#     responses[name] = fav_politician
+#     #check for continuity of poll
+#     continuity = input("to let another person poll, enter yes/no: ")
+#     if 'no' in continuity:
+#         poll_active = False
+# #print poll result
+# print("\n-----POLL RESULT-----\n")
+# for name, fav_politician in responses.items():
+#     print(f"{name.title()} has elected {fav_politician.title()}.")
+    
+
+
+# #sandwitches
+
+# ready_sandwitches = ['peproni','cheeze','extra thick','cheeze','double','cheeze']
+# finished_sandwitches = []
+
+# #code to remove cheeze sandwitches
+# print('cheeze sandwitches are out of stock.\n')
+# while 'cheeze' in ready_sandwitches:
+#     ready_sandwitches.remove('cheeze')
+
+# #loop through ready_sandwitches to take order
+# while ready_sandwitches:
+#     ordered_sandwitch = ready_sandwitches.pop()
+#     print(f"you have ordered {ordered_sandwitch}.\n")
+#     finished_sandwitches.append(ordered_sandwitch)
+
+# #loop through finished_sandwitches to print today's consumed stock.
+# print("\n--finished stock--\n")
+# for finished_sandwitch in finished_sandwitches:
+#     print(f"{finished_sandwitch}")
+
+
+# #functions
+
+# #function defining
+# def greet(user_name):
+#     """The function greets the user."""
+#     print(f"hello {user_name.title()}")
+
+# #function call
+# greet('mangesh')
+
+
+# #favorite book
+
+# #defining function
+# def favourite_book(user,book):
+#     """Prints message showings user's favorite book"""
+#     print(f"{user.title()} likes {book.title()} to read.")
+
+# #function call
+# favourite_book('mangesh','alchemist')
+
+
+# #t-shirt
+
+# # defining function
+# # def make_shirt(size,massage):
+# #function with default arguments.
+# def make_shirt(size,massage='Being Engineer!'):
+#     """Prints size of the shirt and message on it."""
+#     print(f"\nsize of your shirt is {size.upper()}")
+#     print(f"massage on  your shirt is '{massage.upper()}'.\n")
+
+# #function call using positional arguments
+# make_shirt('slim fit','unstoppable coding machine!')
+
+# #function call using  keyword arguments
+# make_shirt(massage='unstoppable coding and reading machine!',size='slim fat')
+
+# #function call for default arguments
+# make_shirt('extra large')
+
+
+
+#cities and countries
+
+#function definition
+def describe_city(city, country='India'):
+    """prints city with country name"""
+    print(f"{city.title()} is in {country.upper()}.\n ")
+
+#function call using positional argumets
+describe_city('mumbai')
+
+#function call using keyward argument
+describe_city(city='new york',country='USA')
+
+#function call with only city 
+describe_city(city='surat')
