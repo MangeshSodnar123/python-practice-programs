@@ -668,18 +668,179 @@
 
 
 
-#cities and countries
+# #cities and countries
 
-#function definition
-def describe_city(city, country='India'):
-    """prints city with country name"""
-    print(f"{city.title()} is in {country.upper()}.\n ")
+# #function definition
+# def describe_city(city, country='India'):
+#     """prints city with country name"""
+#     print(f"{city.title()} is in {country.upper()}.\n ")
 
-#function call using positional argumets
-describe_city('mumbai')
+# #function call using positional argumets
+# describe_city('mumbai')
 
-#function call using keyward argument
-describe_city(city='new york',country='USA')
+# #function call using keyward argument
+# describe_city(city='new york',country='USA')
 
-#function call with only city 
-describe_city(city='surat')
+# #function call with only city 
+# describe_city(city='surat')
+
+
+
+# #function that returns full name
+
+# #defining the function to give full name
+# def get_full_name(first_name,last_name,middle_name=''):
+#     """takes first and last names (middle name is optional) and gives full name."""
+#     if middle_name:
+#         full_name = f'{first_name} {middle_name} {last_name}'
+#         return full_name.title()
+#     else:
+#         full_name = f'{first_name} {last_name}'
+#         return full_name.title()
+
+# #function call
+# name = get_full_name('mangesh','sodnar')
+# name2 = get_full_name('raj', 'kundra','babu')
+
+# #print function outputs
+# print(name)
+# print(name2)
+
+
+
+# #function that returns dictionary
+
+# def get_dictionary_form(first_name,last_name,age=None):
+#     """function that takes first , last name and age and returns dictionary"""
+#     person = {'first':first_name,'last':last_name}
+#     if age:
+#         person['age'] = age
+#     return person
+
+# #function call
+# data = get_dictionary_form('mangesh','sodnar')
+# data2 = get_dictionary_form('raj','kundra',45)
+# print(data)
+# print(data2)
+
+
+
+#music dictionary
+
+# def make_album(artist,album_name,songs_count=''):
+#     """takes artist ,album name and optional no of songs and returns dictionary"""
+#     album = {'artist':artist.title(),'album':album_name}
+#     if songs_count:
+#         album['songs'] = songs_count
+#     return album
+
+# # ehile loop for taking input from prompt
+# while True:
+#     print("\nEnter album details.")
+#     print('press q to quit any time ')
+#     art_name = input('Enter artist name: ')
+#     if art_name == 'q':
+#         break
+#     alb_name = input('Enter album name: ')
+#     if alb_name == 'q':
+#         break
+#     songs = input('Enter songs count: ')
+#     if songs == 'q':
+#         break
+    
+#     print('Here take your album\n')
+#     print(make_album(art_name,alb_name,songs))
+
+
+
+# #pizza
+
+# def print_pizza(available_pizza,finished_pizza):
+#     """prints names of the available pizza"""
+#     while available_pizza:
+#         current_pizza = available_pizza.pop()
+#         print(current_pizza)
+#         finished_pizza.append(current_pizza)
+
+# def print_finished_pizza(finished_pizza):
+#     """prints finished pizzas"""
+#     for pizza in finished_pizza:
+#         print(pizza)
+
+# available = ['peproni','thick','cheeze','peproni']
+# finished = []
+# print_pizza(available[:],finished) #this symbol is used to pass a copy of a list so to avoid modification of list b function.
+# # print_finished_pizza(finished)
+# print('here is the original list')
+# print(available)
+
+
+
+# #print massages
+
+# def print_massages(massages,sent_massages):
+#     """prints the messages from a list"""
+#     while massages:
+#         current_massage = massages.pop()
+#         print(f"printing '{current_massage}'.")
+#         sent_massages.append(current_massage)
+        
+# def print_sent_massages(sent_massages):
+#     """prints sent messages"""
+#     for massage in sent_massages:
+#         print(massage)
+
+# massages_to_send = [
+#     'hello there, who are you?',
+#     'welcome home.',
+#     'congratulations for your success.']
+
+# sent_massages = []
+
+# print('\nfollowing massages need to be send: ')
+# print_massages(massages_to_send[:],sent_massages)
+# print('\n sent massages: ')
+# print_sent_massages(sent_massages)
+# print(f'here is the original list : {massages_to_send}')
+
+
+
+# # arbitrary no of arguments
+
+# def make_pizza(*toppings):#here toppings is a tuple
+#     """takes any no of arguments and prints it"""
+#     print('following are the toppings of your pizza: ')
+#     for topping in toppings:
+#         print(f" -{topping}")
+
+# make_pizza('chana')
+# make_pizza('chana','tomato','apple','mirchi','ratal')
+
+
+
+# #user profile
+
+# def make_user_profile(first,last,**user_info):
+#     """make and prints the dictionary of user information."""
+#     user_info['first name'] = first
+#     user_info['last name'] = last
+#     return user_info
+#     # user_info['skills'] = 
+
+# profile = make_user_profile('mangesh','sodnar')
+# #passing multiple arguments in dictionary 
+# profile1 = make_user_profile('mangesh','sodnar',address='sangamner',skill='python')
+# print(profile1)
+
+
+
+#make car
+
+def make_car(manufacturer,model,**car):
+    """takes some details of car and returns dictionary"""
+    car['car manufacturer'] = manufacturer
+    car['car model'] = model
+    return car
+
+car1 = make_car('maruti','suzuki',color='red',seats='ventilated')
+print(car1)
