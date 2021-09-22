@@ -6,6 +6,7 @@ def fibbonaci(num):
     elif num == 1:
         print(0)
     elif num == 2:
+        print(0)
         print(1)
     else:
         print(0)

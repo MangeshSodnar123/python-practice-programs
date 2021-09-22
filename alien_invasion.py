@@ -834,13 +834,352 @@
 
 
 
-#make car
+# #make car
 
-def make_car(manufacturer,model,**car):
-    """takes some details of car and returns dictionary"""
-    car['car manufacturer'] = manufacturer
-    car['car model'] = model
-    return car
+# def make_car(manufacturer,model,**car):
+#     """takes some details of car and returns dictionary"""
+#     car['car manufacturer'] = manufacturer
+#     car['car model'] = model
+#     return car
 
-car1 = make_car('maruti','suzuki',color='red',seats='ventilated')
-print(car1)
+# car1 = make_car('maruti','suzuki',color='red',seats='ventilated')
+# print(car1)
+
+
+
+# #class 
+
+# #restaurant
+# #defining a class and methods
+# class Restaurant:
+#     """class that replicates restaurant """
+#     def __init__(self,name,menue):
+#         """initiation of a class Restaurant."""
+#         self.name = name
+#         self.menue = menue
+#         self.number_served = 50
+#     def set_number_served(self,number):
+#         """Sets the number of customers served."""
+#         if number >= self.number_served:
+#             self.number_served = number
+#         else:
+#             print("you can't reverse served customer value.")
+
+#     def increment_number_served(self,increment):
+#         """Takes the increment and adds it in number of customers served."""
+#         self.number_served += increment
+
+#     def describe_restaurant(self):
+#         """Tells name and menue type of restaurant"""
+#         print(f"\nName of the restaurant is '{self.name}'.")
+#         print(f"you can get best '{self.menue}' here.")
+#         print(f"it has served {self.number_served} customers.")
+
+#     def open_restaurant(self):
+#         """Prints that restaurant is open"""
+#         print(f"{self.name} is open.")
+
+# #creating an instance
+# restaurant = Restaurant('baba ka dhaba','vadapav')
+# restaurant.set_number_served(60)
+# restaurant.increment_number_served(15)
+# restaurant.describe_restaurant()
+# restaurant.open_restaurant()
+
+# #creating anaother instance
+# my_restaurant = Restaurant('raj palace','shevbhaji')
+# my_restaurant.describe_restaurant()
+# my_restaurant.open_restaurant()
+
+
+
+# #user
+
+# class User:
+#     """takes first and last name of user and greet them"""
+#     def __init__(self,first_name,last_name):
+#         """initiation of a User class."""
+#         self.first_name = first_name
+#         self.last_name = last_name
+#         self.age = 45 #defining attribute without taking as input
+#         self.login_attempts = 0
+
+#     def increment_login_attempts(self):
+#         """Increments ligin attempt by 1."""
+#         self.login_attempts += 1
+
+#     def reset_login_attempts(self):
+#         """resets login attempts to 0."""
+#         self.login_attempts = 0
+
+#     def update_age(self, age):
+#         """it updates the age of the user"""
+#         self.age = age
+
+#     def describe_user(self):
+#         """describes the user"""
+#         print(f"\nFull name of the user is {self.first_name} {self.last_name}.")
+#         print(f"age of the user is {self.age}")
+#         print(f"user has done {self.login_attempts} login attempts.")
+
+#     def greet_user(self):
+#         """greets the user by some massage."""
+#         print(f"Welcome!! {self.first_name} {self.last_name}.")
+
+
+# #instance creation
+# mangesh = User('Mangesh','Sodnar')
+# mangesh.age = 23 #changing attributes at creation of instance
+# mangesh.increment_login_attempts()
+# mangesh.reset_login_attempts()
+# mangesh.describe_user()
+# mangesh.greet_user()
+
+# #another instance creation
+# rajiv = User('Rajiv','Gandhi')
+# rajiv.update_age(34) #updation of the age by passing it to method that changes age.
+# rajiv.describe_user()
+
+
+
+# #inheritance
+# #car
+
+# class Car:
+#     """It try to replicate a car"""
+#     def __init__(self,name,make,year):
+#         """Initiation of attributes of class car."""
+#         self.name = name
+#         self.make = make
+#         self.year = year
+#         self.milage = 45
+#         self.gas_tank_size = 70
+
+#     def increment_milage(self,increment):
+#         """Adds the increment in the milage"""
+#         self.milage += increment
+
+#     def reset_milage(self):
+#         """Resets the milage."""
+#         self.milage = 0
+
+#     def gas_tank(self):
+#         """Prints the capacity of the gas tank."""
+#         print(f"The capacity of the gas tank is {self.gas_tank_size} litre.")
+    
+#     def describe_car(self):
+#         """Describes the car."""
+#         print(f"\n{self.year} {self.make} {self.name}")
+#         print(f"milage is {self.milage}.")
+
+# #creation of the child class
+# class Electric_Car(Car):
+#     """It is special group of car."""
+#     def __init__(self, name, make, year):
+#         """Initiation of attributes."""
+#         super().__init__(name, make, year) #imports parent class attributes.
+#         self.battery = 45
+
+#     def gas_tank(self): #overriding method from parent class.
+#         """Electric cars don't have gas tank"""
+#         print(f"Electric cars don't have gas tank.")
+
+#     def describe_battery(self):
+#         """Describes the size of the battery."""
+#         print(f"the size of battery is {self.battery} kWh.")
+
+    
+# #instance creation of Car
+# honda = Car('city','Honda','2021')
+# honda.increment_milage(100)
+# honda.reset_milage()
+# honda.describe_car()
+# #instance creation of the electric car.
+# my_tesla = Electric_Car('Tesla','Tesla Moters','2020')
+# my_tesla.increment_milage(30)
+# my_tesla.describe_car()
+# my_tesla.describe_battery()
+# my_tesla.gas_tank() #this is irrelevent so let's override this method inside child class.
+
+
+
+# #car
+
+# class Car:
+#     """It try to replicate a car"""
+#     def __init__(self,name,make,year):
+#         """Initiation of attributes of class car."""
+#         self.name = name
+#         self.make = make
+#         self.year = year
+#         self.milage = 45
+#         self.gas_tank_size = 70
+
+#     def increment_milage(self,increment):
+#         """Adds the increment in the milage"""
+#         self.milage += increment
+
+#     def reset_milage(self):
+#         """Resets the milage."""
+#         self.milage = 0
+
+#     def gas_tank(self):
+#         """Prints the capacity of the gas tank."""
+#         print(f"The capacity of the gas tank is {self.gas_tank_size} litre.")
+    
+#     def describe_car(self):
+#         """Describes the car."""
+#         print(f"\n{self.year} {self.make} {self.name}")
+#         print(f"milage is {self.milage}.")
+
+# #creation of a class battery
+# class Battery:
+#     """It replicates a battery"""
+#     def __init__(self,battery_size=75):
+#         """Initiation of attributes of battery"""
+#         self.battery_size = battery_size
+    
+#     def get_range(self):
+#         """It tells range of the car based on size of the battery."""
+#         if self.battery_size == 75:
+#             range = 200
+#         elif self.battery_size == 100:
+#             range = 300
+#         print(f"The range of the car is {range} km.")
+
+# #creation of the child class
+# class Electric_Car(Car):
+#     """It is special group of car."""
+#     def __init__(self, name, make, year):
+#         """Initiation of attributes."""
+#         super().__init__(name, make, year) #imports parent class attributes.
+#         self.battery = Battery() #this attribute is instanced as battery.
+
+#     def gas_tank(self): #overriding method from parent class.
+#         """Electric cars don't have gas tank"""
+#         print(f"Electric cars don't have gas tank.")  
+
+# #instance creation of the electric car.
+# my_tesla = Electric_Car('Tesla','Tesla Moters','2020')
+# my_tesla.increment_milage(30)
+# my_tesla.describe_car()
+# my_tesla.battery.get_range()
+# my_tesla.gas_tank() #this is irrelevent so let's override this method inside child class.
+
+
+
+# #ice cream stand
+# #defining a class and methods
+# class Restaurant:
+#     """class that replicates restaurant """
+#     def __init__(self,name,menue):
+#         """initiation of a class Restaurant."""
+#         self.name = name
+#         self.menue = menue
+#         self.number_served = 50
+#     def set_number_served(self,number):
+#         """Sets the number of customers served."""
+#         if number >= self.number_served:
+#             self.number_served = number
+#         else:
+#             print("you can't reverse served customer value.")
+
+#     def increment_number_served(self,increment):
+#         """Takes the increment and adds it in number of customers served."""
+#         self.number_served += increment
+
+#     def describe_restaurant(self):
+#         """Tells name and menue type of restaurant"""
+#         print(f"\nName of the restaurant is '{self.name}'.")
+#         print(f"you can get best '{self.menue}' here.")
+#         print(f"it has served {self.number_served} customers.")
+
+#     def open_restaurant(self):
+#         """Prints that restaurant is open"""
+#         print(f"{self.name} is open.")
+
+# #define child class :ice cream stand
+# class IceCreamStand(Restaurant):
+#     """Class that replicates the ice cream stand"""
+#     def __init__(self,name,menue):
+#         """Initiation of class IceCreamStand"""
+#         super().__init__(name,menue)
+#         self.flavours = ['straberry','vanila','chocolate','almond','faluda']
+
+#     def display_flavours(self):
+#         """Prints all available flavours"""
+#         print("\nfollowing flavours are available: ")
+#         for flavour in self.flavours:
+#             print("\t"+flavour)
+
+# #instance creation.
+# chocolicius = IceCreamStand('Chocolicius','ice scream')
+# chocolicius.describe_restaurant()
+# chocolicius.display_flavours()
+
+
+
+#admin
+class User:
+    """takes first and last name of user and greet them"""
+    def __init__(self,first_name,last_name):
+        """initiation of a User class."""
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = 45 #defining attribute without taking as input
+        self.login_attempts = 0
+
+    def increment_login_attempts(self):
+        """Increments ligin attempt by 1."""
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        """resets login attempts to 0."""
+        self.login_attempts = 0
+
+    def update_age(self, age):
+        """it updates the age of the user"""
+        self.age = age
+
+    def describe_user(self):
+        """describes the user"""
+        print(f"\nFull name of the user is {self.first_name} {self.last_name}.")
+        print(f"age of the user is {self.age}")
+        print(f"user has done {self.login_attempts} login attempts.")
+
+    def greet_user(self):
+        """greets the user by some massage."""
+        print(f"Welcome!! {self.first_name} {self.last_name}.")
+
+#priviladge class
+class Priviladge:
+    """Shows the priviladges tha admin gets."""
+    def __init__(self):
+        """Initiation of the priviladge class."""
+        self.priviladges = [
+                            'can add post',
+                            'can delete post',
+                            'can ban user']
+
+    def show_priviladges(self):
+        """Prints the priviladges that admin get."""
+        print("Admin can do following things: ")
+        for priviladge in self.priviladges:
+            print("\t",priviladge)    
+
+#child class admin
+class Admin(User):
+    """user that posseses special priviladges"""
+    def __init__(self, first_name, last_name):
+        super().__init__(first_name, last_name)
+        self.priviladge = Priviladge() #instantiation to attribute.
+    
+        
+
+    
+
+#instance creation
+mangesh = Admin('Mangesh','Sodnar')
+mangesh.update_age(23)
+mangesh.describe_user()
+mangesh.priviladge.show_priviladges()

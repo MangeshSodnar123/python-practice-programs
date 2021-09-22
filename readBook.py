@@ -1,4 +1,3 @@
-import book
-from book import favourite_book as bk
+from book import favourite_book
 
-book.bk('mangesh','subtle')
+favourite_book('mangesh','alchemist')
