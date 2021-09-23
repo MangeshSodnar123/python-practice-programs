@@ -1003,68 +1003,74 @@
 
 
 
-# #car
+#car
 
-# class Car:
-#     """It try to replicate a car"""
-#     def __init__(self,name,make,year):
-#         """Initiation of attributes of class car."""
-#         self.name = name
-#         self.make = make
-#         self.year = year
-#         self.milage = 45
-#         self.gas_tank_size = 70
+class Car:
+    """It try to replicate a car"""
+    def __init__(self,name,make,year):
+        """Initiation of attributes of class car."""
+        self.name = name
+        self.make = make
+        self.year = year
+        self.milage = 45
+        self.gas_tank_size = 70
 
-#     def increment_milage(self,increment):
-#         """Adds the increment in the milage"""
-#         self.milage += increment
+    def increment_milage(self,increment):
+        """Adds the increment in the milage"""
+        self.milage += increment
 
-#     def reset_milage(self):
-#         """Resets the milage."""
-#         self.milage = 0
+    def reset_milage(self):
+        """Resets the milage."""
+        self.milage = 0
 
-#     def gas_tank(self):
-#         """Prints the capacity of the gas tank."""
-#         print(f"The capacity of the gas tank is {self.gas_tank_size} litre.")
+    def gas_tank(self):
+        """Prints the capacity of the gas tank."""
+        print(f"The capacity of the gas tank is {self.gas_tank_size} litre.")
     
-#     def describe_car(self):
-#         """Describes the car."""
-#         print(f"\n{self.year} {self.make} {self.name}")
-#         print(f"milage is {self.milage}.")
+    def describe_car(self):
+        """Describes the car."""
+        print(f"\n{self.year} {self.make} {self.name}")
+        print(f"milage is {self.milage}.")
 
-# #creation of a class battery
-# class Battery:
-#     """It replicates a battery"""
-#     def __init__(self,battery_size=75):
-#         """Initiation of attributes of battery"""
-#         self.battery_size = battery_size
+#creation of a class battery
+class Battery:
+    """It replicates a battery"""
+    def __init__(self,battery_size=75):
+        """Initiation of attributes of battery"""
+        self.battery_size = battery_size
     
-#     def get_range(self):
-#         """It tells range of the car based on size of the battery."""
-#         if self.battery_size == 75:
-#             range = 200
-#         elif self.battery_size == 100:
-#             range = 300
-#         print(f"The range of the car is {range} km.")
+    def get_range(self):
+        """It tells range of the car based on size of the battery."""
+        if self.battery_size == 75:
+            range = 200
+        elif self.battery_size == 100:
+            range = 300
+        print(f"The range of the car is {range} km.")
 
-# #creation of the child class
-# class Electric_Car(Car):
-#     """It is special group of car."""
-#     def __init__(self, name, make, year):
-#         """Initiation of attributes."""
-#         super().__init__(name, make, year) #imports parent class attributes.
-#         self.battery = Battery() #this attribute is instanced as battery.
+    def upgrade_battery(self):
+        """upgrades batterry to 100 kWh if it's not to that level."""
+        if self.battery_size < 100:
+            self.battery_size = 100
 
-#     def gas_tank(self): #overriding method from parent class.
-#         """Electric cars don't have gas tank"""
-#         print(f"Electric cars don't have gas tank.")  
+#creation of the child class
+class Electric_Car(Car):
+    """It is special group of car."""
+    def __init__(self, name, make, year):
+        """Initiation of attributes."""
+        super().__init__(name, make, year) #imports parent class attributes.
+        self.battery = Battery() #this attribute is instanced as battery.
 
-# #instance creation of the electric car.
-# my_tesla = Electric_Car('Tesla','Tesla Moters','2020')
-# my_tesla.increment_milage(30)
-# my_tesla.describe_car()
-# my_tesla.battery.get_range()
-# my_tesla.gas_tank() #this is irrelevent so let's override this method inside child class.
+    def gas_tank(self): #overriding method from parent class.
+        """Electric cars don't have gas tank"""
+        print(f"Electric cars don't have gas tank.")  
+
+#instance creation of the electric car.
+my_tesla = Electric_Car('Tesla','Tesla Moters','2020')
+my_tesla.increment_milage(30)
+my_tesla.describe_car()
+my_tesla.battery.upgrade_battery()
+my_tesla.battery.get_range()
+my_tesla.gas_tank() #this is irrelevent so let's override this method inside child class.
 
 
 
@@ -1119,67 +1125,67 @@
 
 
 
-#admin
-class User:
-    """takes first and last name of user and greet them"""
-    def __init__(self,first_name,last_name):
-        """initiation of a User class."""
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = 45 #defining attribute without taking as input
-        self.login_attempts = 0
+# #admin
+# class User:
+#     """takes first and last name of user and greet them"""
+#     def __init__(self,first_name,last_name):
+#         """initiation of a User class."""
+#         self.first_name = first_name
+#         self.last_name = last_name
+#         self.age = 45 #defining attribute without taking as input
+#         self.login_attempts = 0
 
-    def increment_login_attempts(self):
-        """Increments ligin attempt by 1."""
-        self.login_attempts += 1
+#     def increment_login_attempts(self):
+#         """Increments ligin attempt by 1."""
+#         self.login_attempts += 1
 
-    def reset_login_attempts(self):
-        """resets login attempts to 0."""
-        self.login_attempts = 0
+#     def reset_login_attempts(self):
+#         """resets login attempts to 0."""
+#         self.login_attempts = 0
 
-    def update_age(self, age):
-        """it updates the age of the user"""
-        self.age = age
+#     def update_age(self, age):
+#         """it updates the age of the user"""
+#         self.age = age
 
-    def describe_user(self):
-        """describes the user"""
-        print(f"\nFull name of the user is {self.first_name} {self.last_name}.")
-        print(f"age of the user is {self.age}")
-        print(f"user has done {self.login_attempts} login attempts.")
+#     def describe_user(self):
+#         """describes the user"""
+#         print(f"\nFull name of the user is {self.first_name} {self.last_name}.")
+#         print(f"age of the user is {self.age}")
+#         print(f"user has done {self.login_attempts} login attempts.")
 
-    def greet_user(self):
-        """greets the user by some massage."""
-        print(f"Welcome!! {self.first_name} {self.last_name}.")
+#     def greet_user(self):
+#         """greets the user by some massage."""
+#         print(f"Welcome!! {self.first_name} {self.last_name}.")
 
-#priviladge class
-class Priviladge:
-    """Shows the priviladges tha admin gets."""
-    def __init__(self):
-        """Initiation of the priviladge class."""
-        self.priviladges = [
-                            'can add post',
-                            'can delete post',
-                            'can ban user']
+# #priviladge class
+# class Priviladge:
+#     """Shows the priviladges tha admin gets."""
+#     def __init__(self):
+#         """Initiation of the priviladge class."""
+#         self.priviladges = [
+#                             'can add post',
+#                             'can delete post',
+#                             'can ban user']
 
-    def show_priviladges(self):
-        """Prints the priviladges that admin get."""
-        print("Admin can do following things: ")
-        for priviladge in self.priviladges:
-            print("\t",priviladge)    
+#     def show_priviladges(self):
+#         """Prints the priviladges that admin get."""
+#         print("Admin can do following things: ")
+#         for priviladge in self.priviladges:
+#             print("\t",priviladge)    
 
-#child class admin
-class Admin(User):
-    """user that posseses special priviladges"""
-    def __init__(self, first_name, last_name):
-        super().__init__(first_name, last_name)
-        self.priviladge = Priviladge() #instantiation to attribute.
+# #child class admin
+# class Admin(User):
+#     """user that posseses special priviladges"""
+#     def __init__(self, first_name, last_name):
+#         super().__init__(first_name, last_name)
+#         self.priviladge = Priviladge() #instantiation to attribute.
     
         
 
     
 
-#instance creation
-mangesh = Admin('Mangesh','Sodnar')
-mangesh.update_age(23)
-mangesh.describe_user()
-mangesh.priviladge.show_priviladges()
+# #instance creation
+# mangesh = Admin('Mangesh','Sodnar')
+# mangesh.update_age(23)
+# mangesh.describe_user()
+# mangesh.priviladge.show_priviladges()
