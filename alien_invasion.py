@@ -1003,74 +1003,74 @@
 
 
 
-#car
+# #car
 
-class Car:
-    """It try to replicate a car"""
-    def __init__(self,name,make,year):
-        """Initiation of attributes of class car."""
-        self.name = name
-        self.make = make
-        self.year = year
-        self.milage = 45
-        self.gas_tank_size = 70
+# class Car:
+#     """It try to replicate a car"""
+#     def __init__(self,name,make,year):
+#         """Initiation of attributes of class car."""
+#         self.name = name
+#         self.make = make
+#         self.year = year
+#         self.milage = 45
+#         self.gas_tank_size = 70
 
-    def increment_milage(self,increment):
-        """Adds the increment in the milage"""
-        self.milage += increment
+#     def increment_milage(self,increment):
+#         """Adds the increment in the milage"""
+#         self.milage += increment
 
-    def reset_milage(self):
-        """Resets the milage."""
-        self.milage = 0
+#     def reset_milage(self):
+#         """Resets the milage."""
+#         self.milage = 0
 
-    def gas_tank(self):
-        """Prints the capacity of the gas tank."""
-        print(f"The capacity of the gas tank is {self.gas_tank_size} litre.")
+#     def gas_tank(self):
+#         """Prints the capacity of the gas tank."""
+#         print(f"The capacity of the gas tank is {self.gas_tank_size} litre.")
     
-    def describe_car(self):
-        """Describes the car."""
-        print(f"\n{self.year} {self.make} {self.name}")
-        print(f"milage is {self.milage}.")
+#     def describe_car(self):
+#         """Describes the car."""
+#         print(f"\n{self.year} {self.make} {self.name}")
+#         print(f"milage is {self.milage}.")
 
-#creation of a class battery
-class Battery:
-    """It replicates a battery"""
-    def __init__(self,battery_size=75):
-        """Initiation of attributes of battery"""
-        self.battery_size = battery_size
+# #creation of a class battery
+# class Battery:
+#     """It replicates a battery"""
+#     def __init__(self,battery_size=75):
+#         """Initiation of attributes of battery"""
+#         self.battery_size = battery_size
     
-    def get_range(self):
-        """It tells range of the car based on size of the battery."""
-        if self.battery_size == 75:
-            range = 200
-        elif self.battery_size == 100:
-            range = 300
-        print(f"The range of the car is {range} km.")
+#     def get_range(self):
+#         """It tells range of the car based on size of the battery."""
+#         if self.battery_size == 75:
+#             range = 200
+#         elif self.battery_size == 100:
+#             range = 300
+#         print(f"The range of the car is {range} km.")
 
-    def upgrade_battery(self):
-        """upgrades batterry to 100 kWh if it's not to that level."""
-        if self.battery_size < 100:
-            self.battery_size = 100
+#     def upgrade_battery(self):
+#         """upgrades batterry to 100 kWh if it's not to that level."""
+#         if self.battery_size < 100:
+#             self.battery_size = 100
 
-#creation of the child class
-class Electric_Car(Car):
-    """It is special group of car."""
-    def __init__(self, name, make, year):
-        """Initiation of attributes."""
-        super().__init__(name, make, year) #imports parent class attributes.
-        self.battery = Battery() #this attribute is instanced as battery.
+# #creation of the child class
+# class Electric_Car(Car):
+#     """It is special group of car."""
+#     def __init__(self, name, make, year):
+#         """Initiation of attributes."""
+#         super().__init__(name, make, year) #imports parent class attributes.
+#         self.battery = Battery() #this attribute is instanced as battery.
 
-    def gas_tank(self): #overriding method from parent class.
-        """Electric cars don't have gas tank"""
-        print(f"Electric cars don't have gas tank.")  
+#     def gas_tank(self): #overriding method from parent class.
+#         """Electric cars don't have gas tank"""
+#         print(f"Electric cars don't have gas tank.")  
 
-#instance creation of the electric car.
-my_tesla = Electric_Car('Tesla','Tesla Moters','2020')
-my_tesla.increment_milage(30)
-my_tesla.describe_car()
-my_tesla.battery.upgrade_battery()
-my_tesla.battery.get_range()
-my_tesla.gas_tank() #this is irrelevent so let's override this method inside child class.
+# #instance creation of the electric car.
+# my_tesla = Electric_Car('Tesla','Tesla Moters','2020')
+# my_tesla.increment_milage(30)
+# my_tesla.describe_car()
+# my_tesla.battery.upgrade_battery()
+# my_tesla.battery.get_range()
+# my_tesla.gas_tank() #this is irrelevent so let's override this method inside child class.
 
 
 
@@ -1189,3 +1189,123 @@ my_tesla.gas_tank() #this is irrelevent so let's override this method inside chi
 # mangesh.update_age(23)
 # mangesh.describe_user()
 # mangesh.priviladge.show_priviladges()
+
+
+
+# #json file module
+# #this will put the content in file
+# import json
+# numbers = [1, 2, 3,4,5,6]
+# file = 'numbers.json'
+# with open(file,'w') as f:
+#     json.dump(numbers, f)
+
+# #this will load the content from line.
+# import json
+# file = 'numbers.json'
+# with open(file) as f:
+#     numbers = json.load(f)
+# print(numbers)
+
+
+# # username
+
+# import json
+# username = input('enter your name: ')
+# file = 'username.json'
+# with open(file,'w') as f:
+#     json.dump(username, f)
+
+
+
+# import json
+# file = 'name.json'
+# try:
+#     with open(file) as f:
+#         username = json.load(f)
+#     print(f'welcome back {username}.')
+
+# except FileNotFoundError:
+#     username = input('enter your name: ')
+#     file = 'name.json'
+#     with open(file,'w') as f:
+#         json.dump(username, f)
+#     print(f'I will remember you {username}.')
+
+
+# import json
+
+# def greet_user():
+#     """It greets the user"""
+#     file = 'name.json'
+#     try:
+#         with open(file) as f:
+#             username = json.load(f)
+#         print(f'welcome back {username}.')
+
+#     except FileNotFoundError:
+#         username = input('enter your name: ')
+#         file = 'name.json'
+#         with open(file,'w') as f:
+#             json.dump(username, f)
+#         print(f'I will remember you {username}.')
+        
+# greet_user()
+
+
+
+#putting different tasks in small functions.
+import json
+
+def get_stored_username():
+    """Get stored username."""
+    try:
+        file = 'storedname.json'
+        with open(file) as f:
+            username = json.load(f)
+    except FileNotFoundError:
+        return None
+    else:
+        return username
+
+def get_new_username():
+    """It gets new username."""
+    username = input('enter your name: ')
+    file = 'storedname.json'
+    with open(file,'w') as f:
+        json.dump(username, f)
+    return username
+
+def greet_user():
+    """Greet user by name."""
+    username = get_stored_username()
+    if username:
+        print(f"welcome back {str(username).title()}.")
+    else:
+        username = get_stored_username()
+        print(f'I will remember you {username}.')
+
+# call the function
+massage = input("Are you logging in first time (yes/no): ") 
+if 'yes' in massage:
+    get_new_username()
+else:
+    greet_user()
+
+
+
+# #favorite number
+# import json
+
+# try:
+#     favourite_number = 'fav_number.json'
+#     with open(favourite_number,'r') as file:
+#         loaded_number = json.load(file)
+#     print(f"Your favourite number is {loaded_number}")
+
+# except FileNotFoundError:
+#     fav_number = input("Enter your favourite number: ")
+#     favourite_number = 'fav_number.json'
+#     with open(favourite_number,'w') as file:
+#         json.dump(fav_number, file)
+#     print(f"I will remember this number.")
